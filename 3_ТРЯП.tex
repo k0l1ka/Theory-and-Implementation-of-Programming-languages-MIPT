@@ -1,0 +1,392 @@
+\documentclass[a4paper,12pt]{article} % тип документа
+
+% report, book
+
+%  Русский язык
+
+\usepackage[T2A]{fontenc}			% кодировка
+\usepackage[utf8]{inputenc}			% кодировка исходного текста
+\usepackage[english,russian]{babel}	% локализация и переносы
+
+
+% Математика
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+
+
+\usepackage{wasysym}
+% мои добьавки-----------------------------------------
+\usepackage{ dsfont }
+\usepackage{listings}
+
+%мое----------------------------------------------------
+%Заговолок
+\author{Попов Николай}
+\title{Домашнее задание 1\\ по алгебре \LaTeX{}}
+
+%--------------------
+\usepackage{tikz}
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{document} 
+\section*{Задача 1}
+lastpos(${n_1}^{f_1}_{l_1}\cdot {n_2}^{f_2}_{l_2}$)=$(n_2 == T)?l_1\cup l_2:l_2$
+\\
+firstpos(${n_1}^{f_1}_{l_1}\cdot {n_2}^{f_2}_{l_2}$)=$(n_1 == T)?f_1\cup f_2:f_1$
+\\
+nullable(${n_1}^{f_1}_{l_1}\cdot {n_2}^{f_2}_{l_2}$)=$( (n_1 == T)$ \&\& $(n_2 == T))?T:F$\\
+
+lastpos(${n_1}^{f_1}_{l_1} | {n_2}^{f_2}_{l_2}$)=$(n_2 == T)?l_1\cup l_2$
+\\
+firstpos(${n_1}^{f_1}_{l_1}| {n_2}^{f_2}_{l_2}$)=$(n_1 == T)?f_1\cup f_2$
+\\
+nullable(${n_1}^{f_1}_{l_1}| {n_2}^{f_2}_{l_2}$)=$( (n_1 == T)$ || $(n_2 == T))?T:F$\\
+
+lastpos($({n_1}^{f_1}_{l_1})^*$)=$l_1$
+\\
+firstpos($({n_1}^{f_1}_{l_1})^*$)=$f_1$
+\\
+nullable($({n_1}^{f_1}_{l_1})^*$)=T\\
+
+
+\section*{Задача 2}
+РВ = $(ab|b)((a|bb)^*|c^*)^*baba$
+\\
+НКА
+
+\begin{center}
+\begin{tikzpicture}[scale=0.2]
+\tikzstyle{every node}+=[inner sep=0pt]
+\draw [black] (8.5,-6.8) circle (3);
+\draw (8.5,-6.8) node {$1$};
+\draw [black] (27.6,-6.8) circle (3);
+\draw (27.6,-6.8) node {$3$};
+\draw [black] (18.5,-3.4) circle (3);
+\draw (18.5,-3.4) node {$2$};
+\draw [black] (4.5,-14.9) circle (3);
+\draw (4.5,-14.9) node {$4$};
+\draw [black] (18.5,-14.9) circle (3);
+\draw (18.5,-14.9) node {$5$};
+\draw [black] (62.1,-4.2) circle (3);
+\draw (62.1,-4.2) node {$9$};
+\draw [black] (50,-4.2) circle (3);
+\draw (50,-4.2) node {$8$};
+\draw [black] (36.6,-12) circle (3);
+\draw (36.6,-12) node {$6$};
+\draw [black] (56.1,-12.7) circle (3);
+\draw (56.1,-12.7) node {$7$};
+\draw [black] (67.2,-16.1) circle (3);
+\draw (67.2,-16.1) node {$11$};
+\draw [black] (75.1,-8.4) circle (3);
+\draw (75.1,-8.4) node {$10$};
+\draw [black] (75.1,-26.4) circle (3);
+\draw (75.1,-26.4) node {$12$};
+\draw [black] (60.7,-52.9) circle (3);
+\draw (60.7,-52.9) node {$14$};
+\draw [black] (41.5,-53.6) circle (3);
+\draw (41.5,-53.6) node {$15$};
+\draw [black] (21.4,-53.6) circle (3);
+\draw (21.4,-53.6) node {$16$};
+\draw [black] (4.5,-53.6) circle (3);
+\draw (4.5,-53.6) node {$17$};
+\draw [black] (4.5,-53.6) circle (2.4);
+\draw [black] (14.3,-29) circle (3);
+\draw (14.3,-29) node {$18$};
+\draw [black] (25.1,-35) circle (3);
+\draw (25.1,-35) node {$19$};
+\draw [black] (68.2,-41) circle (3);
+\draw (68.2,-41) node {$20$};
+\draw [black] (0.5,-1.3) -- (6.03,-5.1);
+\fill [black] (6.03,-5.1) -- (5.65,-4.24) -- (5.09,-5.06);
+\draw [black] (11.34,-5.83) -- (15.66,-4.37);
+\fill [black] (15.66,-4.37) -- (14.74,-4.15) -- (15.06,-5.1);
+\draw (14.49,-5.64) node [below] {$a$};
+\draw [black] (21.31,-4.45) -- (24.79,-5.75);
+\fill [black] (24.79,-5.75) -- (24.22,-5) -- (23.87,-5.94);
+\draw (21.97,-5.63) node [below] {$b$};
+\draw [black] (7.17,-9.49) -- (5.83,-12.21);
+\fill [black] (5.83,-12.21) -- (6.63,-11.71) -- (5.73,-11.27);
+\draw (5.8,-9.75) node [left] {$b$};
+\draw [black] (7.5,-14.9) -- (15.5,-14.9);
+\fill [black] (15.5,-14.9) -- (14.7,-14.4) -- (14.7,-15.4);
+\draw (11.5,-15.4) node [below] {$e$};
+\draw [black] (25.36,-8.79) -- (20.74,-12.91);
+\fill [black] (20.74,-12.91) -- (21.67,-12.75) -- (21.01,-12);
+\draw (21.94,-10.36) node [above] {$e$};
+\draw [black] (21.46,-14.43) -- (33.64,-12.47);
+\fill [black] (33.64,-12.47) -- (32.77,-12.11) -- (32.93,-13.09);
+\draw (28,-14.05) node [below] {$e$};
+\draw [black] (39.6,-12.11) -- (53.1,-12.59);
+\fill [black] (53.1,-12.59) -- (52.32,-12.06) -- (52.28,-13.06);
+\draw (46.32,-12.89) node [below] {$e$};
+\draw [black] (38.919,-10.097) arc (127.189:113.21748:39.396);
+\fill [black] (47.2,-5.28) -- (46.27,-5.13) -- (46.66,-6.05);
+\draw (41.81,-6.93) node [above] {$e$};
+\draw [black] (53,-4.2) -- (59.1,-4.2);
+\fill [black] (59.1,-4.2) -- (58.3,-3.7) -- (58.3,-4.7);
+\draw (56.05,-4.7) node [below] {$b$};
+\draw [black] (64.95,-5.12) -- (72.25,-7.48);
+\fill [black] (72.25,-7.48) -- (71.64,-6.76) -- (71.33,-7.71);
+\draw (67.59,-6.85) node [below] {$b$};
+\draw [black] (58.97,-13.58) -- (64.33,-15.22);
+\fill [black] (64.33,-15.22) -- (63.71,-14.51) -- (63.42,-15.47);
+\draw (60.72,-14.95) node [below] {$a$};
+\draw [black] (69.03,-18.48) -- (73.27,-24.02);
+\fill [black] (73.27,-24.02) -- (73.18,-23.08) -- (72.39,-23.69);
+\draw (71.72,-19.84) node [right] {$e$};
+\draw [black] (75.531,-11.368) arc (6.61883:-6.61883:52.328);
+\fill [black] (75.53,-23.43) -- (76.12,-22.69) -- (75.13,-22.58);
+\draw (76.38,-17.4) node [right] {$e$};
+\draw [black] (72.111,-26.646) arc (-87.20808:-133.80612:45.1);
+\fill [black] (38.69,-14.15) -- (38.93,-15.06) -- (39.62,-14.34);
+\draw (53.08,-24.37) node [below] {$e$};
+\draw [black] (57.7,-53.01) -- (44.5,-53.49);
+\fill [black] (44.5,-53.49) -- (45.32,-53.96) -- (45.28,-52.96);
+\draw (51.07,-52.71) node [above] {$a$};
+\draw [black] (38.5,-53.6) -- (24.4,-53.6);
+\fill [black] (24.4,-53.6) -- (25.2,-54.1) -- (25.2,-53.1);
+\draw (31.45,-53.1) node [above] {$b$};
+\draw [black] (18.4,-53.6) -- (7.5,-53.6);
+\fill [black] (7.5,-53.6) -- (8.3,-54.1) -- (8.3,-53.1);
+\draw (12.95,-53.1) node [above] {$a$};
+\draw [black] (22.621,-36.64) arc (-70.02136:-168.08785:6.365);
+\fill [black] (22.62,-36.64) -- (21.7,-36.44) -- (22.04,-37.38);
+\draw (16.31,-36.72) node [below] {$c$};
+\draw [black] (17.05,-27.861) arc (99.99532:21.89547:6.869);
+\fill [black] (17.05,-27.86) -- (17.92,-28.21) -- (17.75,-27.23);
+\draw (22.67,-28.12) node [above] {$e$};
+\draw [black] (65.206,-41.194) arc (-87.14402:-108.70653:100.607);
+\fill [black] (65.21,-41.19) -- (64.38,-40.73) -- (64.43,-41.73);
+\draw (45.96,-40.96) node [below] {$e$};
+\draw [black] (39.41,-13.05) -- (72.29,-25.35);
+\fill [black] (72.29,-25.35) -- (71.72,-24.6) -- (71.37,-25.54);
+\draw (54.82,-19.73) node [below] {$e$};
+\draw [black] (16.92,-30.46) -- (22.48,-33.54);
+\fill [black] (22.48,-33.54) -- (22.02,-32.72) -- (21.54,-33.59);
+\draw (18.6,-32.5) node [below] {$e$};
+\draw [black] (17.64,-17.78) -- (15.16,-26.12);
+\fill [black] (15.16,-26.12) -- (15.86,-25.5) -- (14.91,-25.22);
+\draw (15.63,-21.35) node [left] {$e$};
+\draw [black] (73.82,-29.11) -- (69.48,-38.29);
+\fill [black] (69.48,-38.29) -- (70.28,-37.78) -- (69.37,-37.35);
+\draw (70.94,-32.65) node [left] {$e$};
+\draw [black] (65.295,-40.249) arc (-105.22707:-130.18543:116.379);
+\fill [black] (20.77,-16.87) -- (21.06,-17.76) -- (21.7,-17);
+\draw (40.66,-31.49) node [below] {$e$};
+\draw [black] (21.309,-15.952) arc (69.06071:55.52679:212.946);
+\fill [black] (65.74,-39.28) -- (65.36,-38.42) -- (64.8,-39.24);
+\draw (45.31,-25.8) node [above] {$e$};
+\draw [black] (66.6,-43.54) -- (62.3,-50.36);
+\fill [black] (62.3,-50.36) -- (63.15,-49.95) -- (62.3,-49.42);
+\draw (63.82,-45.65) node [left] {$b$};
+\end{tikzpicture}
+\end{center}
+
+
+Таблица для ДКА\\
+\[
+\begin{pmatrix}
+\hspace{20pt}&\hspace{20pt}&\hspace{10pt}a\hspace{10pt}&\hspace{10pt}b\hspace{10pt}&\hspace{10pt}c\hspace{10pt}\\
+
+\hspace{10pt}A\hspace{9pt}&\hspace{10pt}1\hspace{9pt}&\hspace{10pt}B\hspace{10pt}&\hspace{10pt}C\hspace{10pt}&\hspace{10pt}-\hspace{10pt}\\
+
+\hspace{10pt}B\hspace{9pt}&\hspace{10pt}2\hspace{9pt}&\hspace{10pt}-\hspace{10pt}&\hspace{10pt}D\hspace{10pt}&\hspace{10pt}-\hspace{10pt}\\
+
+\hspace{10pt}C\hspace{9pt}&\hspace{10pt}4,5,18,19, 20,6,7,8,12\hspace{9pt}&\hspace{10pt}F\hspace{10pt}&\hspace{10pt}G\hspace{10pt}&\hspace{10pt}H\hspace{10pt}\\
+
+\hspace{10pt}D\hspace{9pt}&\hspace{10pt}3,5,18,19, 20,6,7,8,12\hspace{9pt}&\hspace{10pt}F\hspace{10pt}&\hspace{10pt}G\hspace{10pt}&\hspace{10pt}H\hspace{10pt}\\
+
+
+\hspace{10pt}F\hspace{9pt}&\hspace{10pt}11,12,6,7,8,20,5,18,19\hspace{9pt}&\hspace{10pt}F\hspace{10pt}&\hspace{10pt}G\hspace{10pt}&\hspace{10pt}H\hspace{10pt}\\
+
+\hspace{10pt}G\hspace{9pt}&\hspace{10pt}9,14\hspace{9pt}&\hspace{10pt}I\hspace{10pt}&\hspace{10pt}J\hspace{10pt}&\hspace{10pt}-\hspace{10pt}\\
+
+
+\hspace{10pt}H\hspace{9pt}&\hspace{10pt}5,6,7,8,12,18,19,20\hspace{9pt}&\hspace{10pt}F\hspace{10pt}&\hspace{10pt}G\hspace{10pt}&\hspace{10pt}H\hspace{10pt}\\
+
+
+\hspace{10pt}I\hspace{9pt}&\hspace{10pt}15\hspace{9pt}&\hspace{10pt}-\hspace{10pt}&\hspace{10pt}K\hspace{10pt}&\hspace{10pt}-\hspace{10pt}\\
+
+\hspace{10pt}J\hspace{9pt}&\hspace{10pt}10,5,6,7,8,18,19,20,12\hspace{9pt}&\hspace{10pt}F\hspace{10pt}&\hspace{10pt}G\hspace{10pt}&\hspace{10pt}H\hspace{10pt}\\
+
+\hspace{10pt}K\hspace{9pt}&\hspace{10pt}16\hspace{9pt}&\hspace{10pt}L\hspace{10pt}&\hspace{10pt}-\hspace{10pt}&\hspace{10pt}-\hspace{10pt}\\
+
+\hspace{10pt}L\hspace{9pt}&\hspace{10pt}17\hspace{9pt}&\hspace{10pt}-\hspace{10pt}&\hspace{10pt}-\hspace{10pt}&\hspace{10pt}-\hspace{10pt}\\
+
+\end{pmatrix}
+\]
+
+
+ДКА\\
+
+
+\begin{center}
+\begin{tikzpicture}[scale=0.2]
+\tikzstyle{every node}+=[inner sep=0pt]
+\draw [black] (8.5,-6.8) circle (3);
+\draw (8.5,-6.8) node {$A$};
+\draw [black] (23.1,-4) circle (3);
+\draw (23.1,-4) node {$B$};
+\draw [black] (5.8,-21.6) circle (3);
+\draw (5.8,-21.6) node {$C$};
+\draw [black] (32.2,-26.2) circle (3);
+\draw (32.2,-26.2) node {$D$};
+\draw [black] (37.6,-47.3) circle (3);
+\draw (37.6,-47.3) node {$F$};
+\draw [black] (45,-5.6) circle (3);
+\draw (45,-5.6) node {$G$};
+\draw [black] (8.5,-51.7) circle (3);
+\draw (8.5,-51.7) node {$H$};
+\draw [black] (63.4,-4) circle (3);
+\draw (63.4,-4) node {$I$};
+\draw [black] (59.7,-55.2) circle (3);
+\draw (59.7,-55.2) node {$J$};
+\draw [black] (74.5,-11.3) circle (3);
+\draw (74.5,-11.3) node {$K$};
+\draw [black] (76.2,-32.7) circle (3);
+\draw (76.2,-32.7) node {$L$};
+\draw [black] (76.2,-32.7) circle (2.4);
+\draw [black] (0.5,-1.3) -- (6.03,-5.1);
+\fill [black] (6.03,-5.1) -- (5.65,-4.24) -- (5.09,-5.06);
+\draw [black] (11.45,-6.23) -- (20.15,-4.57);
+\fill [black] (20.15,-4.57) -- (19.27,-4.22) -- (19.46,-5.21);
+\draw (16.38,-6) node [below] {$a$};
+\draw [black] (7.96,-9.75) -- (6.34,-18.65);
+\fill [black] (6.34,-18.65) -- (6.97,-17.95) -- (5.99,-17.77);
+\draw (6.43,-13.93) node [left] {$b$};
+\draw [black] (8.799,-21.534) arc (89.87488:70.35687:61.685);
+\fill [black] (29.4,-25.12) -- (28.81,-24.38) -- (28.48,-25.33);
+\draw (19.79,-21.84) node [above] {$b$};
+\draw [black] (32.94,-29.11) -- (36.86,-44.39);
+\fill [black] (36.86,-44.39) -- (37.14,-43.49) -- (36.17,-43.74);
+\draw (34.14,-37.22) node [left] {$a$};
+\draw [black] (33.78,-23.65) -- (43.42,-8.15);
+\fill [black] (43.42,-8.15) -- (42.57,-8.56) -- (43.42,-9.09);
+\draw (39.23,-17.19) node [right] {$b$};
+\draw [black] (8.485,-48.702) arc (-183.31129:-262.4982:23.882);
+\fill [black] (8.48,-48.7) -- (9.03,-47.93) -- (8.03,-47.87);
+\draw (14.3,-32.36) node [left] {$c$};
+\draw [black] (8.13,-23.49) -- (35.27,-45.41);
+\fill [black] (35.27,-45.41) -- (34.96,-44.52) -- (34.33,-45.3);
+\draw (20.59,-34.94) node [below] {$a$};
+\draw [black] (42.722,-7.552) arc (-50.7714:-84.82164:62.582);
+\fill [black] (42.72,-7.55) -- (41.79,-7.67) -- (42.42,-8.45);
+\draw (27.9,-17.53) node [below] {$b$};
+\draw [black] (6.07,-24.59) -- (8.23,-48.71);
+\fill [black] (8.23,-48.71) -- (8.66,-47.87) -- (7.66,-47.96);
+\draw (6.52,-36.72) node [left] {$c$};
+\draw [black] (39.75,-45.225) arc (161.71579:-126.28421:2.25);
+\draw (44.8,-44.58) node [right] {$a$};
+\fill [black] (40.56,-47.74) -- (41.16,-48.47) -- (41.47,-47.52);
+\draw [black] (38.12,-44.35) -- (44.48,-8.55);
+\fill [black] (44.48,-8.55) -- (43.84,-9.25) -- (44.83,-9.43);
+\draw (40.58,-26.2) node [left] {$b$};
+\draw [black] (34.63,-47.75) -- (11.47,-51.25);
+\fill [black] (11.47,-51.25) -- (12.33,-51.63) -- (12.18,-50.64);
+\draw (22.65,-48.9) node [above] {$c$};
+\draw [black] (25.765,-5.37) arc (57.67159:-13.09317:16.784);
+\fill [black] (33.14,-23.35) -- (33.8,-22.69) -- (32.83,-22.46);
+\draw (33.06,-12.28) node [right] {$b$};
+\draw [black] (47.99,-5.34) -- (60.41,-4.26);
+\fill [black] (60.41,-4.26) -- (59.57,-3.83) -- (59.66,-4.83);
+\draw (54.36,-5.38) node [below] {$a$};
+\draw [black] (57.72,-52.946) arc (-140.17094:-186.81248:58.46);
+\fill [black] (57.72,-52.95) -- (57.59,-52.01) -- (56.82,-52.65);
+\draw (45.8,-32.71) node [left] {$b$};
+\draw [black] (10.455,-49.428) arc (135.18225:62.01405:20.877);
+\fill [black] (35.06,-45.71) -- (34.59,-44.89) -- (34.12,-45.77);
+\draw (21.73,-42.9) node [above] {$a$};
+\draw [black] (47.235,-7.599) arc (45.27604:-122.01738:29.401);
+\fill [black] (47.24,-7.6) -- (47.45,-8.52) -- (48.16,-7.81);
+\draw (50.16,-48.16) node [right] {$b$};
+\draw [black] (7.15,-54.366) arc (0.8699:-287.1301:2.25);
+\draw (2.52,-57.15) node [left] {$c$};
+\fill [black] (5.56,-52.25) -- (4.76,-51.76) -- (4.77,-52.76);
+\draw [black] (65.91,-5.65) -- (71.99,-9.65);
+\fill [black] (71.99,-9.65) -- (71.6,-8.79) -- (71.05,-9.63);
+\draw (67.8,-8.15) node [below] {$b$};
+\draw [black] (74.74,-14.29) -- (75.96,-29.71);
+\fill [black] (75.96,-29.71) -- (76.4,-28.87) -- (75.4,-28.95);
+\draw (74.74,-22.06) node [left] {$a$};
+\draw [black] (58.85,-52.32) -- (45.85,-8.48);
+\fill [black] (45.85,-8.48) -- (45.6,-9.39) -- (46.56,-9.1);
+\draw (53.12,-29.81) node [right] {$b$};
+\draw [black] (56.788,-55.908) arc (-80.82594:-138.51455:19.134);
+\fill [black] (39.4,-49.69) -- (39.56,-50.62) -- (40.31,-49.96);
+\draw (46.28,-55.57) node [below] {$a$};
+\draw [black] (56.71,-55) -- (11.49,-51.9);
+\fill [black] (11.49,-51.9) -- (12.26,-52.46) -- (12.33,-51.46);
+\draw (34.2,-52.88) node [above] {$c$};
+\end{tikzpicture}
+\end{center}
+
+
+\section*{Задача 3}
+РВ = $(ab|b)((a|bb)^*|c^*)^*baba$
+
+
+\begin{figure}
+
+
+\includegraphics[width=1\linewidth]{/home/hz/123.jpg}
+
+
+\end{figure}
+
+\[
+\begin{pmatrix}
+
+  \hspace{15pt} n & \hspace{15pt} followpos(n) \hspace{15pt}\\
+ \hspace{15pt}1 &  \hspace{15pt}2 \hspace{15pt}\\
+ \hspace{15pt}2 &  \hspace{15pt}4,5,7,8 \hspace{15pt}\\
+ \hspace{15pt}3 &  \hspace{15pt}4,5,7,8 \hspace{15pt}\\
+ \hspace{15pt}4 &  \hspace{15pt}4,5,7,8 \hspace{15pt}\\
+ \hspace{15pt}5 &  \hspace{15pt}6  \hspace{15pt}\\
+ \hspace{15pt}6 &  \hspace{15pt}4,5,7,8  \hspace{15pt}\\
+ \hspace{15pt}7 &  \hspace{15pt}4,5,7,8  \hspace{15pt}\\
+ \hspace{15pt}8 &  \hspace{15pt}9  \hspace{15pt}\\
+ \hspace{15pt} \hspace{15pt}9 &  \hspace{15pt}10\\
+ \hspace{15pt}10 &  \hspace{15pt}11 \hspace{15pt}\\
+ \hspace{15pt}11 &  \hspace{15pt}12  \hspace{15pt}\\
+\end{pmatrix}
+\]
+
+
+\[
+\begin{pmatrix}
+ \hspace{20pt}& \hspace{20pt}&\hspace{10pt}a\hspace{10pt}&\hspace{10pt}b\hspace{10pt}&\hspace{10pt}c\hspace{10pt}\\
+ \hspace{10pt}(start)A\hspace{10pt} &\hspace{10pt} 1,3,4,5,7,8 \hspace{10pt}&\hspace{10pt}  B \hspace{10pt}& \hspace{10pt}C\hspace{10pt} &\hspace{10pt} D\hspace{10pt}\\
+ B & 2,4,5,7,8 & D & C & D \\
+ C & 4,5,6,7,8,9 & F & C & D \\
+ D & 4,5,7,8 & D & G & D \\
+ F & 4,5,7,8,10 & D & H & D\\
+ G & 6,9 &  I & D & - \\
+ H & 6,9,11 & K & D & - \\
+ I & 10 & - & L & - \\
+(end)K & 10,12 & - & L & - \\
+ L &  11 & M & - & - \\ 
+ M & 12 & - & - & -\\
+\end{pmatrix}
+\]
+
+
+\section*{Задача 4}
+
+Докажем, что указанный язык не является регулярным с помощью отрицания леммы о накачке.\\
+Лемма о накачке имеет вид: А $\rightarrow $ B\\
+Значит, также истинно $\overline{B}\rightarrow \overline{A}$\\
+
+$\forall N \exists w \in L, w = b^Nab^{N-1},|w| > N, \forall n,m,k: w = nmk : |nm| \leq N, |m| > 0 \hookrightarrow \exists i = 0 : nm^ik (=nk) \in L$\\
+
+$nm = b^k, k \leq N, m = b^p, p \geq 1 \Rightarrow nk = b^{k-p}ab^{k-1}$\\
+При этом $ k-p \leq k-1$. Значит, если $ k-p = k-1$, то длина слова нечетная и оно не лежит в L,а если $ k-p < k-1$, то чтобы части слова w - х и у - были равной длины, литерал а должен принадлежать первой части, иначе, если он во второй части, то длина частей не одинакова. Т.е. слово опять не лежит в L. Из противоречия с леммой о накачке следует, что язык не является регулярным.\\    
+\end{document}
